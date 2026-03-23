@@ -212,6 +212,7 @@ console.log("hello@mail.ru".endsWith(".ru")); // true`}
                     </p>
                     <pre className={styles.code}>
                         {`// Проверить, что строка содержит только цифры
+    /* eslint-disable-next-line no-useless-escape */
 const isAllDigits = /^\d+$/.test("12345"); // true
 const isAllDigits2 = /^\d+$/.test("123a5"); // false
 

@@ -369,6 +369,7 @@ console.log(\`Цена со скидкой: \${(price * (1 - discount)).toFixed(
 // Многострочные строки — просто нажмите Enter внутри кавычек:
 let html = \`
 <div class="product">
+  /* eslint-disable-next-line no-useless-escape */
   <h2>\${item}</h2>
   <p>Цена: \${price} руб.\</p>
 </div>
@@ -562,6 +563,7 @@ console.log(clean); // "hello@gmail.com"
 let rawName = "  АРТЁМ  ЗАЙЦЕВ  ";
 let normalName = rawName
     .trim()
+    /* eslint-disable-next-line no-useless-escape */
     .toLowerCase()
     .replace(/\s+/g, " ") // убираем двойные пробелы
     .split(" ")
