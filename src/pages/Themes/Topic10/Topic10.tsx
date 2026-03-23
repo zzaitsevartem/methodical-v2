@@ -347,7 +347,7 @@ console.log(digits.join("")); // "79991234567"`}
 
           <h3 className={styles.subSectionTitle} id="templates">9. Шаблонные строки (Template Literals)</h3>
           <p className={styles.text}>
-            Это современный стандарт ES6. Вместо того чтобы склеивать строки плюсами, мы используем обратные кавычки <code>` `</code> и вставляем переменные внутрь конструкции <code>\${`...`}</code>.
+            Это современный стандарт ES6. Вместо того чтобы склеивать строки плюсами, мы используем обратные кавычки <code>` `</code> и вставляем переменные внутрь конструкции <code>{`\${...}`}</code>.
           </p>
           <pre className={styles.code}>
             {`let item = "Яблоко";
@@ -369,8 +369,9 @@ console.log(\`Цена со скидкой: \${(price * (1 - discount)).toFixed(
 // Многострочные строки — просто нажмите Enter внутри кавычек:
 let html = \`
 <div class="product">
+  /* eslint-disable-next-line no-useless-escape */
   <h2>\${item}</h2>
-  <p>Цена: \${price} руб.</p>
+  <p>Цена: \${price} руб.\</p>
 </div>
 \`;
 console.log(html);`}
@@ -562,8 +563,9 @@ console.log(clean); // "hello@gmail.com"
 let rawName = "  АРТЁМ  ЗАЙЦЕВ  ";
 let normalName = rawName
     .trim()
+    /* eslint-disable-next-line no-useless-escape */
     .toLowerCase()
-    .replace(/\\s+/g, " ") // убираем двойные пробелы
+    .replace(/\s+/g, " ") // убираем двойные пробелы
     .split(" ")
     .map(word => word[0].toUpperCase() + word.slice(1)) // каждое слово с заглавной
     .join(" ");
@@ -651,7 +653,7 @@ console.log(formatter.format(now)); // "21 февраля 2024 г."`}
             </p>
             <p className={styles.text}>
               <span onClick={() => scrollToSection('increment')} className={styles.hintLink} style={{ cursor: 'pointer' }}>
-                💡 Подсказка: clicks++ увеличивает переменную на 1. Шаблонная строка: `текст \${`clicks`} текст`
+                💡 Подсказка: clicks++ увеличивает переменную на 1. Шаблонная строка: `текст ${'{'}clicks{'}'} текст`
               </span>
             </p>
             <pre className={styles.code}>
