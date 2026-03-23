@@ -1,0 +1,50 @@
+:root {
+  --primary-gold: #F59E0B;
+  --dark-gold: #D97706;
+  --disabled-gray: #9CA3AF;
+  --disabled-bg: #E5E7EB;
+  --white: #FFFFFF;
+}
+
+.backProgress {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary-gold);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+
+  &:hover {
+    background: var(--dark-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  }
+
+  &:disabled {
+    background: var(--disabled-bg);
+    color: var(--disabled-gray);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .backProgress {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .backProgress {
+    font-size: 0.9rem;
+  }
+}

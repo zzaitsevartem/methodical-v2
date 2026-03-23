@@ -1,0 +1,394 @@
+.home {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 2.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F59E0B, #ffffff, #F59E0B);
+    background-size: 200% 100%;
+    animation: gradientShift 6s ease infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.headerContent {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #F59E0B;
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  background: linear-gradient(90deg,
+      #B45309, #D97706, #F59E0B, #FBBF24, #F59E0B, #D97706, #B45309);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  animation: shimmer 10s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #1f2937;
+  font-weight: 500;
+  margin: 0;
+}
+
+.courseInfo {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #F59E0B;
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #F59E0B;
+    margin: 0.5rem 0;
+    border-radius: 2px;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #1f2937;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+
+  ul {
+    list-style: disc;
+    margin-left: 2rem;
+    color: #1f2937;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 3px solid #F59E0B;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 35px rgba(245, 158, 11, 0.3);
+  }
+}
+
+.authorInfo {
+  text-align: left;
+}
+
+.authorText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #F59E0B;
+  margin-bottom: 0.5rem;
+}
+
+.authorName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.authorDetails {
+  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 500;
+  margin: 0.3rem 0;
+}
+
+.topicsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.topicCard {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+    border-color: #F59E0B;
+
+    .topicHoverEffect {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .topicNumber {
+      background: linear-gradient(90deg, #B45309, #D97706, #F59E0B, #FBBF24, #F59E0B, #D97706, #B45309);
+      background-size: 400% 100%;
+      animation: shimmer 10s ease-in-out infinite;
+      color: #ffffff;
+      -webkit-text-fill-color: white;
+    }
+  }
+
+  &.active {
+    border-color: #F59E0B;
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.2);
+
+    .topicNumber {
+      background: linear-gradient(90deg, #B45309, #D97706, #F59E0B, #FBBF24, #F59E0B, #D97706, #B45309);
+      background-size: 400% 100%;
+      animation: shimmer 10s ease-in-out infinite;
+      color: #ffffff;
+      -webkit-text-fill-color: white;
+    }
+  }
+}
+
+.topicHoverEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.03), rgba(245, 158, 11, 0.03));
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.topicNumber {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F59E0B;
+  background: #e5e7eb;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.topicTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.topicDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.startButton {
+  display: block;
+  max-width: 200px;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  background: #F59E0B;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  }
+}
+
+@media (max-width: 968px) {
+  .topicsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 1.5rem;
+  }
+
+  .header {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .profileImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .topicsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .topicCard {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .author {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .authorName {
+    font-size: 1.3rem;
+  }
+
+  .topicCard {
+    padding: 1.5rem;
+  }
+
+  .topicNumber {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .topicTitle {
+    font-size: 1.2rem;
+  }
+
+  .topicDescription {
+    font-size: 0.95rem;
+  }
+}

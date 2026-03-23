@@ -1,0 +1,49 @@
+:root {
+  --primary-gold: #F59E0B;
+  --dark-gold: #D97706;
+  --white: #FFFFFF;
+}
+
+.backButton {
+  position: fixed;
+  top: 1.7rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-gold);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 10;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+
+  &:hover {
+    background: var(--dark-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  }
+
+  &.hidden {
+    transform: translateY(-100px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .backButton {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .backButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
